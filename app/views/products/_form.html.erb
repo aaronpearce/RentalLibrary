@@ -1,0 +1,7 @@
+<%= form_for @product do |f| %>
+  Product Name: <%= f.text_field :name %><br />
+  Description: <%= f.text_field :description %><br />
+  Hire Fee (¢) : <%= f.number_field :hirefee %><br />
+  Rented?    : <%= f.check_box :rented %><br />
+  <%= f.submit %>
+<% end %>

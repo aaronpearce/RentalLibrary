@@ -1,0 +1,29 @@
+<h1 style="colour: #3BA5FF"> Full Product List</h1>
+	
+<body>
+	<br>
+	<table class="table">
+  		<thead>
+    		<tr>
+      			<th>Product</th>
+      			<th>Product Description</th>
+      			<th>Is Rented</th>
+      			<th>Hire Fee (¢)</th>
+      			<th>Details</th>
+    		</tr>
+  		</thead>
+		<tbody>
+		<% for product in @products %>
+			<tr>
+				<td><b><%= product.name %></b></td>
+				<td><%= product.description %></td>
+				<td><%= product.rented %></td>
+				<td><%= product.hirefee %></td>
+				<td><%= link_to "Show", product_path(product)  %> <%= link_to "Edit", edit_product_path(product)  %> <%= link_to "Delete", product_path(product), method: :delete  %></td>
+			</tr>
+		<% end %>
+		</tbody>
+	</table>
+</body>
+
+<%= link_to "New Product", new_product_path %>

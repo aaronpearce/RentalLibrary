@@ -34,6 +34,7 @@ gem 'devise'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'flutie'
+gem 'paperclip', git: "git://github.com/thoughtbot/paperclip.git"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

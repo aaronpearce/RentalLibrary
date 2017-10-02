@@ -3,6 +3,8 @@ class Product < ActiveRecord::Base
 	validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 		
 	def hirefee=(value)
-			write_attribute :hirefee, value.to_d * 100.0 
+			write_attribute :hirefee, value.to_d * 100.00
   end
+
+ 	
 end

@@ -8,8 +8,8 @@
       			<th>Product</th>
       			<th>Image</th>
       			<th>Product Description</th>
-      			<th>Is Rented</th>
-      			<th>Hire Fee (¢)</th>
+      			<th>Available for Rent</th>
+      			<th>Hire Fee ($)</th>
       			<th>Details</th>
     		</tr>
   		</thead>
@@ -19,8 +19,12 @@
 				<td><b><%= link_to product.name, product_path(product) %></b></td>
 				<td><%= image_tag product.image.url(:thumb) %></td>
 				<td><%= product.description %></td>
-				<td><%= product.rented %></td>
-				<td><%= product.hirefee / 100.00 %></td>
+				<td><% if product.rented == true %>
+    						No
+					<%  else  %>
+    						Yes
+				<% end%></td>
+				<td><%= product.hirefee / 100.00  %></td>
 				<td><%= link_to "Edit", edit_product_path(product)  %> <%= link_to "Delete", product_path(product), method: :delete  %></td>
 			</tr>
 		<% end %>

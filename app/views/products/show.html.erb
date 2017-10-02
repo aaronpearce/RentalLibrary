@@ -1,16 +1,23 @@
   <h1><%= @product.name %></h1>
  
 	<%= image_tag @product.image.url(:medium) %>
-<p>
+</br></br>
+
   <strong>Description:</strong>
   <%= @product.description %>
-</p> 
-<p>
-  <strong>Available:</strong>
-  <%= @product.rented %>
-</p> 
+</br>
 
+  <strong>Available:</strong>
+  	
+
+<% if @product.rented == true %>
+    	No
+<%  else  %>
+    	Yes
+<% end%>
+
+  	
 <p>
   <strong>Hire Fee ($):</strong>
-  <%= @product.hirefee %>
+  <%= @product.hirefee / 100.00 %>
 </p>

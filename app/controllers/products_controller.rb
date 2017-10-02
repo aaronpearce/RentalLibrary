@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
 
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
+  
 
   	def index
     	@products = Product.all
@@ -44,6 +45,8 @@ class ProductsController < ApplicationController
    	 	redirect_to products_path()
   	end
 
+
+
   	private
 
   	def set_product
@@ -53,4 +56,8 @@ class ProductsController < ApplicationController
   	def product_params
    		params.require(:product).permit(:name, :description, :rented, :hirefee, :image)
   	end
+
+
+    
+    
 end

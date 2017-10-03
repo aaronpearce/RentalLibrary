@@ -5,9 +5,6 @@ class ProductsController < ApplicationController
 
   	def index
     	@products = Product.all
-      user=User.find(1)
-      user.admin=true
-      user.save!
         	end
 
   	def show

@@ -21,4 +21,4 @@ test:
   database: test_borrowroom
 
 production:
-  url: <%= ENV["DATABASE_URL"]
+  url: <%= ENV["DATABASE_URL"]  %>

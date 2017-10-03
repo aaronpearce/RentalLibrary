@@ -19,17 +19,17 @@
 				<td><b><%= link_to product.name, product_path(product) %></b></td>
 				<td><%= image_tag product.image.url(:thumb) %></td>
 				<td><%= product.description %></td>
-				<td><% if product.rented == true %>
+				<td><% if product.rented %>
     						No
 					<%  else  %>
     						Yes
 				<% end%></td>
 				<td><%= product.hirefee / 100.00  %></td>
-				<td><%= link_to "Edit", edit_product_path(product)  %> <%= link_to "Delete", product_path(product), method: :delete  %></td>
+				<td><% if current_user.admin? %> <%= link_to "Edit", edit_product_path(product)  %> <%= link_to "Delete", product_path(product), method: :delete  %> <% end %></td>
 			</tr>
 		<% end %>
 		</tbody>
 	</table>
 </body>
 
-<%= link_to "New Product", new_product_path %>
+<% if current_user.admin? %><%= link_to "New Product", new_product_path %><% end %>

@@ -10,7 +10,7 @@
   <strong>Available:</strong>
   	
 
-<% if @product.rented == true %>
+<% if @product.rented %>
     	No
 <%  else  %>
     	Yes
@@ -21,3 +21,5 @@
   <strong>Hire Fee ($):</strong>
   <%= @product.hirefee / 100.00 %>
 </p>
+</br></br>
+<% if current_user.admin? %> <%= link_to "Edit", edit_product_path(@product)  %> <%= link_to "Delete", product_path(@product), method: :delete  %> <% end %>
